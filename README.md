@@ -3,7 +3,7 @@
 A RAG-powered PDF Q&A application built with LangChain, ChromaDB, and DeepSeek. Upload any PDF and ask questions grounded in its content.
 
 ## Demo
-![DocuMind Demo](demo.png)
+![DocuMind Demo](DocuMind_demo.png)
 
 ## Features
 - Upload any PDF document
