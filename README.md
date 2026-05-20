@@ -5,6 +5,9 @@ A RAG-powered PDF Q&A application built with LangChain, ChromaDB, and DeepSeek. 
 ## Demo
 ![DocuMind Demo](DocuMind_demo.png)
 
+## 📓 Research Notebook
+Full step-by-step RAG pipeline development: [Open in Colab](https://colab.research.google.com/drive/1qI9lVApcfXXnLHjv19zNyzHmjwYIpQVR?usp=sharing)
+
 ## Features
 - Upload any PDF document
 - Semantic search using vector embeddings
