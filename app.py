@@ -2,6 +2,8 @@ import streamlit as st
 import os
 from rag import build_rag_chain
 
+os.makedirs("uploads", exist_ok=True)
+
 st.title("**DocuMind — Ask Your Documents**")
 
 uploaded_file = st.file_uploader("Upload a PDF", type="pdf")
