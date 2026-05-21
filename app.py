@@ -35,6 +35,6 @@ if uploaded_file:
                 sources = "\n".join([f"- Page {doc.metadata.get('page', '?')}" for doc in source_docs])
                 full_answer = f"{answer}\n\n**Sources:**\n{sources}"
             except Exception as e:
-                full_answer = "⚠️ Due to high demand, the AI service is temporarily unavailable. Please try again in a few minutes."
+                full_answer = "⚠️ We've run out of API credits and the service is currently down. Check back later — or feel free to clone the repo and run it locally with your own API key. 💸"
         st.session_state.messages.append({"role": "assistant", "content": full_answer})
         st.rerun()
