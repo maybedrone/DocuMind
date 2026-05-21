@@ -29,8 +29,12 @@ if uploaded_file:
     if question:
         st.session_state.messages.append({"role": "user", "content": question})
         with st.spinner("Thinking..."):
-            answer = st.session_state.chain.invoke(question)
-            source_docs = st.session_state.retriever.invoke(question)
-            sources = "\n".join([f"- Page {doc.metadata.get('page', '?')}" for doc in source_docs])
-        st.session_state.messages.append({"role": "assistant", "content": f"{answer}\n\n**Sources:**\n{sources}"})
+            try:
+                answer = st.session_state.chain.invoke(question)
+                source_docs = st.session_state.retriever.invoke(question)
+                sources = "\n".join([f"- Page {doc.metadata.get('page', '?')}" for doc in source_docs])
+                full_answer = f"{answer}\n\n**Sources:**\n{sources}"
+            except Exception as e:
+                full_answer = "⚠️ Due to high demand, the AI service is temporarily unavailable. Please try again in a few minutes."
+        st.session_state.messages.append({"role": "assistant", "content": full_answer})
         st.rerun()
